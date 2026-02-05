@@ -1,0 +1,2931 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SEO Growth Plan – Client Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ============================================
+       PERSONALIZATION CONFIG - Edit these values!
+       ============================================ -->
+  <script>
+    const CLIENT_CONFIG = {
+      // Client Information
+      clientName: "DazzDrones",
+      clientTagline: "Aerial Excellence",
+
+      // ACERO Digital Agency Info
+      agencyName: "ACERO Digital",
+      agencyEmail: "info@acero.digital",
+      agencyWebsite: "acero.digital",
+      agencyLogo: "https://acero.digital/wp-content/uploads/2022/10/Logo-3-1.jpg",
+
+      // Target Markets (shown in presentation)
+      priorityCities: ["New York", "Los Angeles", "Chicago", "Houston", "Miami"],
+
+      // Services Offered (icon options: home, video, ruler, search, building, camera, map, settings)
+      services: [
+        { name: "Real Estate", icon: "home" },
+        { name: "Events", icon: "video" },
+        { name: "Surveys", icon: "ruler" },
+        { name: "Inspections", icon: "search" }
+      ],
+
+      // Pricing (customize per client)
+      pricing: {
+        foundation: "$2,500",
+        growth: "$4,500",
+        scale: "$7,500"
+      },
+
+      // Target Metrics
+      metrics: {
+        targetCities: "50+",
+        serviceTypes: "8",
+        totalPages: "400+",
+        conversionRate: "3.2%",
+        avgBooking: "$450",
+        monthlyCapacity: "200+"
+      }
+    };
+  </script>
+
+  <style>
+    :root{
+      --bg0:#050810;
+      --bg1:#080C18;
+      --bg2:#0A1020;
+      --card: rgba(255,255,255,.04);
+      --card2: rgba(255,255,255,.08);
+      --stroke: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.94);
+      --muted: rgba(255,255,255,.65);
+      --muted2: rgba(255,255,255,.45);
+      --accent:#FF6B00;
+      --accent2:#FF8534;
+      --good:#4ADE80;
+      --warn:#FBBF24;
+      --bad:#F87171;
+      --purple:#A78BFA;
+      --cyan:#22D3EE;
+      --shadow: 0 24px 80px rgba(0,0,0,.65);
+      --shadow2: 0 12px 40px rgba(0,0,0,.45);
+      --radius: 24px;
+      --radius2: 16px;
+      --maxw: 1240px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: 'Syne', sans-serif;
+      color:var(--text);
+      background: var(--bg0);
+      overflow:hidden;
+    }
+
+    /* Animated background */
+    .bg-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .bg-gradient::before {
+      content: '';
+      position: absolute;
+      width: 140%;
+      height: 140%;
+      top: -20%;
+      left: -20%;
+      background:
+        radial-gradient(ellipse 800px 600px at 25% 20%, rgba(255,107,0,.22), transparent 50%),
+        radial-gradient(ellipse 700px 500px at 75% 30%, rgba(167,139,250,.18), transparent 50%),
+        radial-gradient(ellipse 900px 700px at 50% 80%, rgba(34,211,238,.10), transparent 50%);
+      animation: bgFloat 20s ease-in-out infinite;
+    }
+    @keyframes bgFloat {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(2%, 1%) rotate(1deg); }
+      50% { transform: translate(-1%, 2%) rotate(-1deg); }
+      75% { transform: translate(1%, -1%) rotate(0.5deg); }
+    }
+
+    /* Grain overlay */
+    .grain-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .35;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+    }
+
+    /* top chrome */
+    .topbar{
+      position:fixed;
+      top:0; left:0; right:0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 20px;
+      z-index:50;
+      background: linear-gradient(180deg, rgba(5,8,16,.95) 0%, rgba(5,8,16,0) 100%);
+      pointer-events:none;
+    }
+    .topbar > *{ pointer-events:auto; }
+
+    .brand{
+      display:flex; align-items:center; gap:14px;
+      padding:10px 16px 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(20px);
+      animation: fadeSlideDown .6s ease-out;
+    }
+    .logoMark{
+      width:38px; height:38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent) 0%, #FF9A5C 100%);
+      box-shadow: 0 8px 24px rgba(255,107,0,.35);
+      border: 1px solid rgba(255,255,255,.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .logoMark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.5), transparent 50%);
+    }
+    .logoMark::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E") center/contain no-repeat;
+      opacity: .9;
+    }
+    .brand .name{
+      display:flex; flex-direction:column; line-height:1.1;
+    }
+    .brand .name b{
+      font-size:14px;
+      font-weight: 700;
+      letter-spacing:-.2px;
+    }
+    .brand .name span{
+      font-size:11px;
+      color:var(--muted2);
+      font-weight: 500;
+      letter-spacing: .3px;
+    }
+
+    /* ACERO Digital Branding */
+    .acero-brand {
+      background: linear-gradient(135deg, rgba(51,51,170,.15), rgba(51,51,170,.05)) !important;
+      border-color: rgba(51,51,170,.3) !important;
+    }
+    .agency-logo {
+      height: 28px;
+      width: auto;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+    .brand-divider {
+      width: 1px;
+      height: 24px;
+      background: rgba(255,255,255,.15);
+      margin: 0 4px;
+    }
+
+    .controls{
+      display:flex; align-items:center; gap:8px;
+      animation: fadeSlideDown .6s ease-out .1s both;
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--text);
+      font-size:12px;
+      font-weight: 500;
+      cursor:pointer;
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(20px);
+      user-select:none;
+      transition: all .2s ease;
+      font-family: inherit;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.15);
+      transform: translateY(-1px);
+    }
+    .btn:active{ transform: translateY(0); }
+    .pill{
+      padding:10px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.4);
+      border: 1px solid rgba(255,255,255,.08);
+      font-size:13px;
+      font-weight: 600;
+      color: var(--text);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow2);
+      user-select:none;
+    }
+
+    /* progress */
+    .progressWrap{
+      position:fixed;
+      left:20px; right:20px;
+      bottom:16px;
+      z-index:45;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      pointer-events:none;
+      animation: fadeSlideUp .6s ease-out .2s both;
+    }
+    .progress{
+      height:6px;
+      flex:1;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.06);
+      overflow:hidden;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,.3);
+    }
+    .progress > i{
+      display:block;
+      height:100%;
+      width:0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 20px rgba(255,107,0,.5);
+      border-radius: 999px;
+      transition: width .4s cubic-bezier(.4,0,.2,1);
+    }
+    .hint{
+      pointer-events:none;
+      font-size:11px;
+      font-weight: 500;
+      color: var(--muted2);
+      background: rgba(0,0,0,.5);
+      border: 1px solid rgba(255,255,255,.06);
+      padding:8px 12px;
+      border-radius:999px;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow2);
+      white-space:nowrap;
+      transition: opacity .3s ease;
+    }
+
+    /* stage */
+    .stage{
+      position: relative;
+      z-index: 10;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:80px 20px 70px;
+    }
+    .deck{
+      width:min(var(--maxw), 100%);
+      aspect-ratio: 16 / 9;
+      position:relative;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.02) inset;
+      overflow:hidden;
+      animation: deckAppear .8s cubic-bezier(.2,.9,.3,1) both;
+    }
+    @keyframes deckAppear {
+      from { opacity: 0; transform: scale(.96) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .slides{
+      position:absolute;
+      inset:0;
+    }
+    section.slide{
+      position:absolute;
+      inset:0;
+      padding:44px 48px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:28px;
+      opacity:0;
+      transform: translateX(60px);
+      transition: opacity .5s ease, transform .6s cubic-bezier(.2,.9,.2,1);
+      pointer-events:none;
+    }
+    section.slide.active{
+      opacity:1;
+      transform: translateX(0);
+      pointer-events:auto;
+    }
+    section.slide.active .stagger-1 { animation: staggerIn .5s ease-out .1s both; }
+    section.slide.active .stagger-2 { animation: staggerIn .5s ease-out .15s both; }
+    section.slide.active .stagger-3 { animation: staggerIn .5s ease-out .2s both; }
+    section.slide.active .stagger-4 { animation: staggerIn .5s ease-out .25s both; }
+    section.slide.active .stagger-5 { animation: staggerIn .5s ease-out .3s both; }
+    section.slide.active .stagger-6 { animation: staggerIn .5s ease-out .35s both; }
+
+    @keyframes staggerIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .full{
+      grid-template-columns: 1fr;
+    }
+
+    /* typography */
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      background: rgba(255,107,0,.12);
+      border: 1px solid rgba(255,107,0,.25);
+      color: var(--accent2);
+      font-size:11px;
+      font-weight: 600;
+      letter-spacing:.5px;
+      text-transform: uppercase;
+      width:max-content;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(255,107,0,.6);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .6; transform: scale(.85); }
+    }
+    h1{
+      margin:16px 0 12px;
+      font-family: 'Instrument Serif', serif;
+      font-size:48px;
+      font-weight: 400;
+      letter-spacing:-.5px;
+      line-height:1.05;
+    }
+    h2{
+      margin:8px 0 14px;
+      font-family: 'Instrument Serif', serif;
+      font-size:36px;
+      font-weight: 400;
+      letter-spacing:-.3px;
+      line-height:1.1;
+    }
+    p{
+      margin:12px 0 0;
+      color: var(--muted);
+      font-size:15px;
+      line-height:1.6;
+      font-weight: 400;
+    }
+    .big{
+      font-size:17px;
+      color: rgba(255,255,255,.75);
+      line-height:1.6;
+    }
+    .accent{
+      color: var(--accent2);
+      font-style: italic;
+    }
+    .muted2{ color: var(--muted2); }
+
+    /* cards / lists */
+    .card{
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius2);
+      padding:18px;
+      backdrop-filter: blur(10px);
+      transition: all .25s ease;
+    }
+    .card:hover {
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.12);
+    }
+    .card.tight{ padding:14px; border-radius: 14px; }
+    .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .grid3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+    .row{ display:flex; gap:10px; flex-wrap:wrap; align-items:flex-start; }
+    .tag{
+      padding:7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.75);
+      font-size:11px;
+      font-weight: 500;
+      user-select:none;
+      transition: all .2s ease;
+    }
+    .tag:hover {
+      background: rgba(255,255,255,.08);
+    }
+    ul.clean{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    ul.clean li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+      transition: all .25s ease;
+    }
+    ul.clean li:hover {
+      background: rgba(255,255,255,.05);
+      transform: translateX(4px);
+    }
+    ul.clean li b {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    ul.clean li span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .bullet{
+      width:10px; height:10px; border-radius:99px;
+      background: rgba(255,255,255,.25);
+      margin-top:5px;
+      flex: 0 0 10px;
+      box-shadow: 0 0 8px currentColor;
+    }
+    .bullet.good{ background: var(--good); color: var(--good); }
+    .bullet.warn{ background: var(--warn); color: var(--warn); }
+    .bullet.bad{ background: var(--bad); color: var(--bad); }
+
+    /* visuals / diagrams */
+    .visual{
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .heroBox{
+      flex:1;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.3);
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .heroBox::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 300px 200px at 20% 20%, rgba(255,107,0,.15), transparent 50%),
+        radial-gradient(ellipse 250px 180px at 80% 80%, rgba(167,139,250,.12), transparent 50%);
+      pointer-events: none;
+    }
+    .heroTitle{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      position: relative;
+    }
+    .heroTitle b{
+      font-size:13px;
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+    }
+    .mini{
+      font-size:10px;
+      font-weight: 500;
+      color: var(--muted2);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    /* Animated visualizations */
+    .viz-container {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+    }
+
+    /* Animated bar chart */
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 100%;
+      width: 100%;
+      padding: 10px 0;
+    }
+    .bar {
+      flex: 1;
+      background: linear-gradient(180deg, var(--accent), rgba(255,107,0,.3));
+      border-radius: 6px 6px 0 0;
+      position: relative;
+      animation: barGrow 1s ease-out forwards;
+      transform-origin: bottom;
+      box-shadow: 0 0 20px rgba(255,107,0,.3);
+    }
+    .bar::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 9px;
+      color: var(--muted2);
+      white-space: nowrap;
+    }
+    @keyframes barGrow {
+      from { transform: scaleY(0); }
+      to { transform: scaleY(1); }
+    }
+    .bar:nth-child(1) { animation-delay: .1s; height: 40%; }
+    .bar:nth-child(2) { animation-delay: .15s; height: 55%; }
+    .bar:nth-child(3) { animation-delay: .2s; height: 45%; }
+    .bar:nth-child(4) { animation-delay: .25s; height: 70%; }
+    .bar:nth-child(5) { animation-delay: .3s; height: 85%; background: linear-gradient(180deg, var(--good), rgba(74,222,128,.3)); box-shadow: 0 0 20px rgba(74,222,128,.3); }
+    .bar:nth-child(6) { animation-delay: .35s; height: 100%; background: linear-gradient(180deg, var(--good), rgba(74,222,128,.3)); box-shadow: 0 0 20px rgba(74,222,128,.3); }
+
+    /* Animated line chart */
+    .line-chart {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .line-chart svg {
+      width: 100%;
+      height: 100%;
+    }
+    .line-path {
+      fill: none;
+      stroke: url(#lineGradient);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: drawLine 2s ease-out forwards;
+    }
+    .line-fill {
+      fill: url(#fillGradient);
+      opacity: 0;
+      animation: fadeIn 1s ease-out .5s forwards;
+    }
+    .line-dot {
+      fill: var(--accent);
+      opacity: 0;
+      animation: popIn .3s ease-out forwards;
+    }
+    .line-dot:nth-child(1) { animation-delay: .3s; }
+    .line-dot:nth-child(2) { animation-delay: .6s; }
+    .line-dot:nth-child(3) { animation-delay: .9s; }
+    .line-dot:nth-child(4) { animation-delay: 1.2s; }
+    .line-dot:nth-child(5) { animation-delay: 1.5s; }
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes fadeIn {
+      to { opacity: .3; }
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Animated donut chart */
+    .donut-chart {
+      width: 120px;
+      height: 120px;
+      position: relative;
+    }
+    .donut-chart svg {
+      transform: rotate(-90deg);
+    }
+    .donut-ring {
+      fill: none;
+      stroke: rgba(255,255,255,.06);
+      stroke-width: 12;
+    }
+    .donut-segment {
+      fill: none;
+      stroke-width: 12;
+      stroke-linecap: round;
+      stroke-dasharray: 0 100;
+      animation: donutGrow 1.5s ease-out forwards;
+    }
+    .donut-segment.seg-1 { stroke: var(--accent); animation-delay: .2s; }
+    .donut-segment.seg-2 { stroke: var(--purple); animation-delay: .4s; }
+    .donut-segment.seg-3 { stroke: var(--cyan); animation-delay: .6s; }
+    @keyframes donutGrow {
+      to { stroke-dasharray: var(--value) 100; }
+    }
+    .donut-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .donut-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      animation: countUp 1.5s ease-out forwards;
+    }
+    .donut-label {
+      font-size: 10px;
+      color: var(--muted2);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    /* Animated metrics */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+    }
+    .metric-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: shimmer 2s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { opacity: 0; transform: translateX(-100%); }
+      50% { opacity: 1; transform: translateX(100%); }
+    }
+    .metric-value {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+    }
+    .metric-value.accent { color: var(--accent); }
+    .metric-value.good { color: var(--good); }
+    .metric-value.purple { color: var(--purple); }
+    .metric-label {
+      font-size: 10px;
+      color: var(--muted2);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .3px;
+    }
+    .metric-trend {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      color: var(--good);
+      margin-top: 6px;
+      padding: 3px 8px;
+      background: rgba(74,222,128,.1);
+      border-radius: 999px;
+    }
+
+    /* Animated flow diagram */
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 10px 0;
+    }
+    .flow-node {
+      flex: 1;
+      max-width: 100px;
+      padding: 12px 8px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      animation: nodeAppear .4s ease-out forwards;
+    }
+    .flow-node:nth-child(1) { animation-delay: .1s; }
+    .flow-node:nth-child(3) { animation-delay: .3s; }
+    .flow-node:nth-child(5) { animation-delay: .5s; }
+    .flow-node:nth-child(7) { animation-delay: .7s; }
+    @keyframes nodeAppear {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .flow-node .icon {
+      width: 28px;
+      height: 28px;
+      margin: 0 auto 6px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .flow-node .icon.orange { background: rgba(255,107,0,.2); color: var(--accent); }
+    .flow-node .icon.purple { background: rgba(167,139,250,.2); color: var(--purple); }
+    .flow-node .icon.cyan { background: rgba(34,211,238,.2); color: var(--cyan); }
+    .flow-node .icon.green { background: rgba(74,222,128,.2); color: var(--good); }
+    .flow-node span {
+      font-size: 10px;
+      color: var(--muted);
+      display: block;
+    }
+    .flow-arrow {
+      color: rgba(255,255,255,.2);
+      font-size: 16px;
+      opacity: 0;
+      animation: arrowAppear .3s ease-out forwards;
+    }
+    .flow-arrow:nth-child(2) { animation-delay: .2s; }
+    .flow-arrow:nth-child(4) { animation-delay: .4s; }
+    .flow-arrow:nth-child(6) { animation-delay: .6s; }
+    @keyframes arrowAppear {
+      from { opacity: 0; transform: translateX(-5px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Pulsing rings */
+    .pulse-rings {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+    .pulse-ring {
+      position: absolute;
+      inset: 0;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      opacity: 0;
+      animation: pulseRing 3s ease-out infinite;
+    }
+    .pulse-ring:nth-child(2) { animation-delay: 1s; }
+    .pulse-ring:nth-child(3) { animation-delay: 2s; }
+    @keyframes pulseRing {
+      0% { transform: scale(.5); opacity: .8; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    .pulse-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px rgba(255,107,0,.5);
+    }
+    .pulse-center span {
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* diagram blocks */
+    .steps{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    .step{
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      padding:14px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      transition: all .25s ease;
+    }
+    .step:hover {
+      background: rgba(255,255,255,.05);
+      transform: translateY(-2px);
+    }
+    .ico{
+      width:36px; height:36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), rgba(255,107,0,.5));
+      box-shadow: 0 8px 20px rgba(255,107,0,.25);
+      flex:0 0 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .ico.purple { background: linear-gradient(135deg, var(--purple), rgba(167,139,250,.5)); box-shadow: 0 8px 20px rgba(167,139,250,.25); }
+    .ico.cyan { background: linear-gradient(135deg, var(--cyan), rgba(34,211,238,.5)); box-shadow: 0 8px 20px rgba(34,211,238,.25); }
+    .ico.green { background: linear-gradient(135deg, var(--good), rgba(74,222,128,.5)); box-shadow: 0 8px 20px rgba(74,222,128,.25); }
+    .step b{
+      font-size:13px;
+      font-weight: 600;
+    }
+    .step span{
+      display:block;
+      margin-top:3px;
+      font-size:11px;
+      color: var(--muted);
+      line-height:1.45;
+    }
+
+    /* pipelines */
+    .pipeline{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+    .node{
+      padding:14px 16px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      min-width: 140px;
+      flex: 1 1 140px;
+      transition: all .25s ease;
+    }
+    .node:hover {
+      background: rgba(255,255,255,.05);
+    }
+    .node b{ font-size:13px; font-weight: 600; }
+    .node span{
+      display:block;
+      margin-top:4px;
+      font-size:11px;
+      color: var(--muted);
+    }
+    .arrow{
+      width:20px; height:20px;
+      opacity:.5;
+      flex:0 0 20px;
+    }
+
+    /* timeline */
+    .timeline{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+      margin-top:12px;
+    }
+    .milestone{
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      padding:14px;
+      position:relative;
+      overflow:hidden;
+      transition: all .25s ease;
+    }
+    .milestone:hover {
+      background: rgba(255,255,255,.05);
+      transform: translateY(-2px);
+    }
+    .milestone:before{
+      content:"";
+      position:absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: .6;
+    }
+    .milestone b{
+      position:relative;
+      font-size:13px;
+      font-weight: 600;
+    }
+    .milestone ul{
+      position:relative;
+      margin:10px 0 0;
+      padding-left:14px;
+      color: var(--muted);
+      font-size:11px;
+      line-height:1.55;
+    }
+
+    /* pricing */
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:12px;
+    }
+    .plan{
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      padding:16px;
+      position:relative;
+      overflow:hidden;
+      min-height: 200px;
+      transition: all .25s ease;
+    }
+    .plan:hover {
+      background: rgba(255,255,255,.05);
+      transform: translateY(-2px);
+    }
+    .plan.featured{
+      border-color: rgba(255,107,0,.35);
+      background: rgba(255,107,0,.05);
+      box-shadow: 0 0 40px rgba(255,107,0,.1);
+    }
+    .plan.featured::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top, rgba(255,107,0,.15), transparent 60%);
+      pointer-events: none;
+    }
+    .plan h3{
+      margin:0;
+      font-size:15px;
+      font-weight: 600;
+    }
+    .plan .price{
+      margin-top:10px;
+      font-size:20px;
+      font-weight:700;
+    }
+    .plan .price small{
+      font-size:11px;
+      color: var(--muted2);
+      font-weight: 500;
+    }
+    .plan ul{
+      margin:12px 0 0;
+      padding-left:14px;
+      color: var(--muted);
+      font-size:11px;
+      line-height:1.6;
+    }
+    .badge{
+      position:absolute;
+      top:12px; right:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,107,0,.2);
+      border:1px solid rgba(255,107,0,.35);
+      color: var(--accent2);
+      font-size:10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .3px;
+    }
+
+    /* footer inside deck */
+    .deckFooter{
+      position:absolute;
+      left:24px; right:24px; bottom:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color: var(--muted2);
+      font-size:10px;
+      pointer-events:none;
+      z-index:20;
+    }
+    .deckFooter .right{ display:flex; gap:10px; align-items:center; }
+    .miniTag{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.06);
+      background: rgba(0,0,0,.3);
+      backdrop-filter: blur(10px);
+      font-weight: 500;
+    }
+
+    /* presenter notes */
+    .notes{
+      margin-top:10px;
+      padding:12px 14px;
+      border-radius: 12px;
+      background: rgba(167,139,250,.08);
+      border:1px solid rgba(167,139,250,.2);
+      color: rgba(255,255,255,.7);
+      font-size:11px;
+      line-height:1.5;
+      display:none;
+    }
+    body.show-notes .notes{ display:block; }
+
+    /* thumbnails rail */
+    .thumbs{
+      position:fixed;
+      top:76px;
+      right:20px;
+      width:200px;
+      max-height: calc(100vh - 160px);
+      overflow:auto;
+      z-index:40;
+      border-radius: 16px;
+      background: rgba(0,0,0,.6);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(20px);
+      padding:10px;
+      display:none;
+    }
+    body.show-thumbs .thumbs{ display:block; }
+    .thumb{
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.03);
+      padding:10px;
+      margin-bottom:6px;
+      cursor:pointer;
+      user-select:none;
+      transition: all .2s ease;
+    }
+    .thumb:hover{
+      background: rgba(255,255,255,.06);
+      transform: translateX(2px);
+    }
+    .thumb.active{
+      border-color: rgba(255,107,0,.4);
+      background: rgba(255,107,0,.08);
+    }
+    .thumb b{ display:block; font-size:11px; font-weight: 600; margin-bottom:4px; }
+    .thumb span{ display:block; font-size:10px; color: var(--muted2); line-height:1.35; }
+
+    /* responsive */
+    @media (max-width: 1024px){
+      section.slide{ grid-template-columns: 1fr; overflow-y: auto; }
+      .visual { display: none; }
+      .thumbs{ display:none !important; }
+      h1{ font-size:36px; }
+      h2{ font-size:28px; }
+      .deck{ aspect-ratio: 4 / 3; }
+      section.slide { padding: 32px; }
+    }
+
+    /* print */
+    @media print{
+      body{ overflow:visible; background:#fff; color:#000; }
+      .topbar,.progressWrap,.thumbs,.bg-gradient,.grain-overlay{ display:none !important; }
+      .stage{ padding:0; }
+      .deck{
+        box-shadow:none; border:none; border-radius:0;
+        width: 100%;
+        aspect-ratio:auto;
+        height:auto;
+        background:#fff;
+      }
+      section.slide{
+        position:relative;
+        opacity:1 !important;
+        transform:none !important;
+        pointer-events:auto;
+        page-break-after: always;
+        padding:36px;
+        color:#000;
+        border-bottom:1px solid #ddd;
+      }
+      .card,.heroBox,.milestone,.plan,.node,.step,.kicker,.tag,.miniTag{
+        background:#fff !important; color:#000 !important;
+        border:1px solid #ddd !important;
+        box-shadow:none !important;
+      }
+      p, .muted2, .mini, ul, span{ color:#333 !important; }
+      .accent{ color:#D94F00 !important; }
+      .notes{ display:block !important; border:1px solid #ccc !important; background: #f9f9f9 !important; }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,.25); }
+
+    /* ============================================
+       DRONE-THEMED PERSONALIZATIONS
+       ============================================ */
+
+    /* Animated Drone */
+    .drone-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 5;
+      overflow: hidden;
+    }
+    .flying-drone {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      opacity: 0;
+      animation: droneFly 25s ease-in-out infinite;
+    }
+    .flying-drone svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 10px 30px rgba(255,107,0,.4));
+    }
+    @keyframes droneFly {
+      0% {
+        left: -80px;
+        top: 30%;
+        opacity: 0;
+        transform: rotate(-5deg) scale(0.8);
+      }
+      5% { opacity: 0.6; }
+      25% {
+        left: 30%;
+        top: 20%;
+        transform: rotate(3deg) scale(1);
+      }
+      50% {
+        left: 60%;
+        top: 35%;
+        transform: rotate(-3deg) scale(0.9);
+      }
+      75% {
+        left: 85%;
+        top: 25%;
+        transform: rotate(5deg) scale(1);
+      }
+      95% { opacity: 0.6; }
+      100% {
+        left: 110%;
+        top: 30%;
+        opacity: 0;
+        transform: rotate(-5deg) scale(0.8);
+      }
+    }
+
+    /* Drone propeller animation */
+    .propeller {
+      transform-origin: center;
+      animation: spin 0.1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Client badge */
+    .client-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px 8px 10px;
+      background: linear-gradient(135deg, rgba(255,107,0,.15), rgba(255,107,0,.05));
+      border: 1px solid rgba(255,107,0,.3);
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .client-badge .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(255,107,0,.3);
+    }
+    .client-badge .info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .client-badge .client-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .client-badge .prepared-for {
+      font-size: 10px;
+      color: var(--muted2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Service cards with drone icons */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .service-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: all .25s ease;
+    }
+    .service-card:hover {
+      background: rgba(255,255,255,.06);
+      transform: translateY(-3px);
+      border-color: rgba(255,107,0,.3);
+    }
+    .service-card .service-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 10px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255,107,0,.2), rgba(255,107,0,.05));
+      border: 1px solid rgba(255,107,0,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .service-card .service-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Aerial map visualization */
+    .aerial-map {
+      position: relative;
+      width: 100%;
+      height: 140px;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,107,0,.25) 0%, transparent 25%),
+        radial-gradient(circle at 50% 60%, rgba(255,107,0,.2) 0%, transparent 20%),
+        radial-gradient(circle at 75% 40%, rgba(255,107,0,.25) 0%, transparent 25%),
+        radial-gradient(circle at 35% 70%, rgba(167,139,250,.2) 0%, transparent 20%),
+        radial-gradient(circle at 85% 75%, rgba(34,211,238,.2) 0%, transparent 20%);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.08);
+      overflow: hidden;
+    }
+    .aerial-map::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 9px, rgba(255,255,255,.03) 10px),
+        linear-gradient(0deg, transparent 9px, rgba(255,255,255,.03) 10px);
+      background-size: 20px 20px;
+    }
+    .map-pin {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255,107,0,.6), 0 0 40px rgba(255,107,0,.3);
+      animation: mapPulse 2s ease-in-out infinite;
+    }
+    .map-pin::after {
+      content: attr(data-city);
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 8px;
+      color: var(--muted);
+      white-space: nowrap;
+      background: rgba(0,0,0,.6);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    @keyframes mapPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.7; }
+    }
+    .map-pin:nth-child(1) { top: 25%; left: 20%; animation-delay: 0s; }
+    .map-pin:nth-child(2) { top: 45%; left: 15%; animation-delay: 0.3s; }
+    .map-pin:nth-child(3) { top: 35%; left: 50%; animation-delay: 0.6s; }
+    .map-pin:nth-child(4) { top: 60%; left: 55%; animation-delay: 0.9s; }
+    .map-pin:nth-child(5) { top: 55%; left: 80%; animation-delay: 1.2s; }
+
+    /* Flight path animation */
+    .flight-path {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .flight-path svg {
+      width: 100%;
+      height: 100%;
+    }
+    .flight-line {
+      fill: none;
+      stroke: rgba(255,107,0,.3);
+      stroke-width: 2;
+      stroke-dasharray: 8 4;
+      stroke-linecap: round;
+      animation: dashMove 2s linear infinite;
+    }
+    @keyframes dashMove {
+      to { stroke-dashoffset: -24; }
+    }
+
+    /* Coverage stats */
+    .coverage-stats {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .coverage-stat {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      background: rgba(255,255,255,.03);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .coverage-stat .stat-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .coverage-stat .stat-label {
+      font-size: 9px;
+      color: var(--muted2);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ROI Calculator visualization */
+    .roi-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px;
+      background: rgba(0,0,0,.2);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .roi-item {
+      text-align: center;
+      flex: 1;
+    }
+    .roi-item .roi-value {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .roi-item .roi-label {
+      font-size: 9px;
+      color: var(--muted2);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .roi-operator {
+      font-size: 18px;
+      color: var(--muted2);
+      font-weight: 600;
+    }
+
+    /* Personalized contact card */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(255,107,0,.1), rgba(255,107,0,.02));
+      border: 1px solid rgba(255,107,0,.25);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 8px 24px rgba(255,107,0,.3);
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-info .contact-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .contact-info .contact-detail {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ACERO Contact Card Styling */
+    .acero-contact {
+      background: linear-gradient(135deg, rgba(51,51,170,.2), rgba(51,51,170,.05)) !important;
+      border: 1px solid rgba(51,51,170,.4) !important;
+    }
+    .contact-logo {
+      height: 40px;
+      width: auto;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    /* ACERO footer tag */
+    .acero-tag {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(51,51,170,.15), rgba(51,51,170,.05)) !important;
+      border-color: rgba(51,51,170,.25) !important;
+    }
+
+    /* Drone service icons */
+    .drone-service-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .drone-service-icon.real-estate {
+      background: linear-gradient(135deg, rgba(74,222,128,.3), rgba(74,222,128,.1));
+      border: 1px solid rgba(74,222,128,.3);
+    }
+    .drone-service-icon.events {
+      background: linear-gradient(135deg, rgba(167,139,250,.3), rgba(167,139,250,.1));
+      border: 1px solid rgba(167,139,250,.3);
+    }
+    .drone-service-icon.survey {
+      background: linear-gradient(135deg, rgba(34,211,238,.3), rgba(34,211,238,.1));
+      border: 1px solid rgba(34,211,238,.3);
+    }
+    .drone-service-icon.inspection {
+      background: linear-gradient(135deg, rgba(251,191,36,.3), rgba(251,191,36,.1));
+      border: 1px solid rgba(251,191,36,.3);
+    }
+
+    /* SVG Icon styles */
+    .icon-svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      flex-shrink: 0;
+    }
+    .icon-svg.sm { width: 14px; height: 14px; }
+    .icon-svg.lg { width: 22px; height: 22px; }
+    .service-icon .icon-svg,
+    .drone-service-icon .icon-svg {
+      width: 22px;
+      height: 22px;
+    }
+    .ico .icon-svg,
+    .icon .icon-svg {
+      width: 18px;
+      height: 18px;
+    }
+    .avatar .icon-svg {
+      width: 18px;
+      height: 18px;
+      stroke: white;
+    }
+    .roi-value .icon-svg {
+      width: 26px;
+      height: 26px;
+    }
+    .tag .icon-svg {
+      width: 12px;
+      height: 12px;
+      vertical-align: -2px;
+      margin-right: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="grain-overlay"></div>
+
+  <!-- Animated Flying Drone -->
+  <div class="drone-container">
+    <div class="flying-drone">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Drone body -->
+        <ellipse cx="50" cy="50" rx="15" ry="8" fill="url(#droneBody)"/>
+        <ellipse cx="50" cy="48" rx="10" ry="5" fill="rgba(255,255,255,0.2)"/>
+        <!-- Arms -->
+        <line x1="35" y1="50" x2="15" y2="35" stroke="#FF6B00" stroke-width="3" stroke-linecap="round"/>
+        <line x1="65" y1="50" x2="85" y2="35" stroke="#FF6B00" stroke-width="3" stroke-linecap="round"/>
+        <line x1="35" y1="50" x2="15" y2="65" stroke="#FF6B00" stroke-width="3" stroke-linecap="round"/>
+        <line x1="65" y1="50" x2="85" y2="65" stroke="#FF6B00" stroke-width="3" stroke-linecap="round"/>
+        <!-- Propellers -->
+        <ellipse class="propeller" cx="15" cy="35" rx="12" ry="4" fill="rgba(255,255,255,0.6)"/>
+        <ellipse class="propeller" cx="85" cy="35" rx="12" ry="4" fill="rgba(255,255,255,0.6)" style="animation-delay: 0.05s"/>
+        <ellipse class="propeller" cx="15" cy="65" rx="12" ry="4" fill="rgba(255,255,255,0.6)" style="animation-delay: 0.025s"/>
+        <ellipse class="propeller" cx="85" cy="65" rx="12" ry="4" fill="rgba(255,255,255,0.6)" style="animation-delay: 0.075s"/>
+        <!-- Motors -->
+        <circle cx="15" cy="35" r="4" fill="#333"/>
+        <circle cx="85" cy="35" r="4" fill="#333"/>
+        <circle cx="15" cy="65" r="4" fill="#333"/>
+        <circle cx="85" cy="65" r="4" fill="#333"/>
+        <!-- Camera -->
+        <rect x="45" y="54" width="10" height="8" rx="2" fill="#222"/>
+        <circle cx="50" cy="58" r="3" fill="#FF6B00"/>
+        <defs>
+          <linearGradient id="droneBody" x1="35" y1="42" x2="65" y2="58">
+            <stop offset="0%" stop-color="#444"/>
+            <stop offset="50%" stop-color="#333"/>
+            <stop offset="100%" stop-color="#222"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="brand acero-brand">
+      <img src="https://acero.digital/wp-content/uploads/2022/10/Logo-3-1.jpg" alt="ACERO Digital" class="agency-logo" id="agencyLogoImg">
+      <div class="brand-divider"></div>
+      <div class="name">
+        <b id="brandClientName">DazzDrones</b>
+        <span>SEO Growth Strategy</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="pill" id="counter">1 / 12</div>
+      <button class="btn" id="btnPrev" title="Previous">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        <span class="muted2">Prev</span>
+      </button>
+      <button class="btn" id="btnNext" title="Next">
+        <span class="muted2">Next</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <button class="btn" id="btnNotes" title="Notes (N)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </button>
+      <button class="btn" id="btnThumbs" title="Slides (T)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </button>
+      <button class="btn" id="btnAuto" title="Autoplay (A)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+      <button class="btn" id="btnFS" title="Fullscreen (F)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="thumbs" id="thumbs"></div>
+
+  <div class="stage">
+    <div class="deck" id="deck">
+
+      <div class="slides" id="slides">
+
+        <!-- Slide 1: Title -->
+        <section class="slide active" data-title="SEO Growth Plan" data-sub="90-day roadmap to rankings + bookings">
+          <div>
+            <div class="client-badge stagger-1">
+              <div class="avatar"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><path d="M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+              <div class="info">
+                <span class="prepared-for">Prepared for</span>
+                <span class="client-name" id="clientNameBadge">DazzDrones</span>
+              </div>
+            </div>
+
+            <h1 class="stagger-2">SEO Growth Plan<br><span class="accent">Rank, Convert, Scale</span></h1>
+            <p class="big stagger-3">
+              We'll fix what blocks Google from understanding your drone services site, consolidate SEO power onto one main domain,
+              then scale city/service pages and build authority with <b>Digital PR</b>.
+            </p>
+
+            <div class="row stagger-4" style="margin-top:16px">
+              <span class="tag"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> Foundation first</span>
+              <span class="tag"><svg class="icon-svg" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Programmatic scale</span>
+              <span class="tag"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Digital PR</span>
+              <span class="tag"><svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Clear milestones</span>
+            </div>
+
+            <div class="notes">
+              Emphasize: this is not "random SEO tasks." It's a structured plan with gates: Google must be able to read pages reliably before scaling.
+            </div>
+          </div>
+
+          <div class="visual stagger-5">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Your Drone Services</b>
+                <span class="mini">Market coverage</span>
+              </div>
+
+              <div class="service-grid" id="serviceGrid">
+                <div class="service-card">
+                  <div class="service-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                  <div class="service-name">Real Estate</div>
+                </div>
+                <div class="service-card">
+                  <div class="service-icon"><svg class="icon-svg" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+                  <div class="service-name">Events</div>
+                </div>
+                <div class="service-card">
+                  <div class="service-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                  <div class="service-name">Surveys</div>
+                </div>
+                <div class="service-card">
+                  <div class="service-icon"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                  <div class="service-name">Inspections</div>
+                </div>
+              </div>
+
+              <div class="aerial-map">
+                <div class="flight-path">
+                  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path class="flight-line" d="M 15 30 Q 30 20, 50 35 T 85 40"/>
+                    <path class="flight-line" d="M 20 60 Q 40 50, 55 55 T 80 70" style="animation-delay: 0.5s"/>
+                  </svg>
+                </div>
+                <div class="map-pin" data-city="NYC"></div>
+                <div class="map-pin" data-city="LA"></div>
+                <div class="map-pin" data-city="CHI"></div>
+                <div class="map-pin" data-city="HOU"></div>
+                <div class="map-pin" data-city="MIA"></div>
+              </div>
+
+              <div class="coverage-stats">
+                <div class="coverage-stat">
+                  <div class="stat-value" id="statCities">50+</div>
+                  <div class="stat-label">Target Cities</div>
+                </div>
+                <div class="coverage-stat">
+                  <div class="stat-value" style="color: var(--purple);">8</div>
+                  <div class="stat-label">Services</div>
+                </div>
+                <div class="coverage-stat">
+                  <div class="stat-value" style="color: var(--good);">400+</div>
+                  <div class="stat-label">Pages</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 2: Success -->
+        <section class="slide" data-title="Success Looks Like" data-sub="Simple, measurable outcomes">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> Outcomes</div>
+            <h2 class="stagger-2">What success looks like</h2>
+
+            <ul class="clean stagger-3">
+              <li><span class="bullet good"></span><div><b>Rank for high-intent searches</b><span>"drone pilot in {city}", "aerial photography {city}", etc.</span></div></li>
+              <li><span class="bullet good"></span><div><b>More qualified enquiries</b><span>Less noise, more real buyers who want to book.</span></div></li>
+              <li><span class="bullet good"></span><div><b>A scalable system</b><span>Add new locations/services without reinventing the wheel.</span></div></li>
+              <li><span class="bullet good"></span><div><b>Compounding authority</b><span>Digital PR builds trust so rankings stick long-term.</span></div></li>
+            </ul>
+
+            <div class="notes">
+              Keep it simple: rankings are a means to revenue. We care about qualified enquiries and bookings.
+            </div>
+          </div>
+
+          <div class="visual stagger-4">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Timeline Progression</b>
+                <span class="mini">Today → 6 Months</span>
+              </div>
+
+              <div class="timeline" style="margin-top:0">
+                <div class="milestone">
+                  <b>Today</b>
+                  <ul>
+                    <li>Google visibility capped</li>
+                    <li>SEO power split</li>
+                    <li>Scaling is risky</li>
+                  </ul>
+                </div>
+                <div class="milestone">
+                  <b>30 Days</b>
+                  <ul>
+                    <li>Google can read pages</li>
+                    <li>First pages live</li>
+                    <li>Clean signals</li>
+                  </ul>
+                </div>
+                <div class="milestone">
+                  <b>90 Days</b>
+                  <ul>
+                    <li>Scale key cities</li>
+                    <li>Consolidate domains</li>
+                    <li>Start PR pushes</li>
+                  </ul>
+                </div>
+                <div class="milestone">
+                  <b>6 Months</b>
+                  <ul>
+                    <li>Meaningful traffic lift</li>
+                    <li>Leads compound</li>
+                    <li>Authority improves</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="notes">
+                Explain "compounding": SEO is not linear. Once foundations + authority are in place, growth accelerates.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 3: SEO Explained -->
+        <section class="slide" data-title="SEO Explained" data-sub="Find → Read → Trust → Rank">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> How It Works</div>
+            <h2 class="stagger-2">SEO in plain English</h2>
+            <p class="big stagger-3">Google needs to do four things well:</p>
+
+            <div class="steps stagger-4">
+              <div class="step"><div class="ico"><svg class="icon-svg" viewBox="0 0 24 24" stroke="white"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div><b>1) Find</b><span>Discover pages via links + sitemap.</span></div></div>
+              <div class="step"><div class="ico purple"><svg class="icon-svg" viewBox="0 0 24 24" stroke="white"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div><b>2) Read</b><span>Understand the page content instantly.</span></div></div>
+              <div class="step"><div class="ico cyan"><svg class="icon-svg" viewBox="0 0 24 24" stroke="white"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><b>3) Trust</b><span>Believe you're credible (mentions, links).</span></div></div>
+              <div class="step"><div class="ico green"><svg class="icon-svg" viewBox="0 0 24 24" stroke="white"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div><div><b>4) Rank</b><span>Choose you for the best search match.</span></div></div>
+            </div>
+
+            <div class="card stagger-5" style="margin-top:12px">
+              <b style="font-size:12px">Our job</b>
+              <p style="margin:6px 0 0; font-size:11px; color:var(--muted)">
+                Remove barriers to "Read", then build content + authority so Google confidently ranks you.
+              </p>
+            </div>
+
+            <div class="notes">
+              Use this slide as the anchor for later: if "Read" fails (site isn't crawl-readable), nothing else matters.
+            </div>
+          </div>
+
+          <div class="visual stagger-6">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>SEO Pipeline</b>
+                <span class="mini">Sequential flow</span>
+              </div>
+
+              <div class="viz-container">
+                <div class="flow-diagram">
+                  <div class="flow-node">
+                    <div class="icon orange"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    <span>Find</span>
+                  </div>
+                  <span class="flow-arrow">→</span>
+                  <div class="flow-node">
+                    <div class="icon purple"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                    <span>Read</span>
+                  </div>
+                  <span class="flow-arrow">→</span>
+                  <div class="flow-node">
+                    <div class="icon cyan"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <span>Trust</span>
+                  </div>
+                  <span class="flow-arrow">→</span>
+                  <div class="flow-node">
+                    <div class="icon green"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+                    <span>Rank</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card tight">
+                <b style="font-size:12px">Critical insight</b>
+                <p style="margin:6px 0 0; font-size:11px; color:var(--muted)">
+                  If a page is hard for Google to read quickly, it won't compete in tough markets.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4: Baseline Problem -->
+        <section class="slide" data-title="Baseline Problem" data-sub="Google can't reliably read key pages">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> Current State</div>
+            <h2 class="stagger-2">What's blocking growth today</h2>
+            <p class="big stagger-3">
+              Some modern sites load the real content <b>after</b> the page runs code.
+              Search engines don't always wait—so they sometimes see a "thin" page.
+            </p>
+
+            <div class="grid2 stagger-4" style="margin-top:14px">
+              <div class="card">
+                <b style="font-size:12px">What Google sees</b>
+                <ul style="margin:8px 0 0; padding-left:14px; color:var(--muted); font-size:11px; line-height:1.55">
+                  <li>Minimal text</li>
+                  <li>Weak page signals</li>
+                  <li>Fewer internal links</li>
+                </ul>
+              </div>
+              <div class="card">
+                <b style="font-size:12px">What users see</b>
+                <ul style="margin:8px 0 0; padding-left:14px; color:var(--muted); font-size:11px; line-height:1.55">
+                  <li>Beautiful UI</li>
+                  <li>Content loads later</li>
+                  <li>Great experience</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="notes">
+              Keep it non-technical. Say: "It's like showing Google a blank brochure and expecting it to sell your service."
+            </div>
+          </div>
+
+          <div class="visual stagger-5">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Before vs After</b>
+                <span class="mini">Indexing comparison</span>
+              </div>
+
+              <div class="grid2" style="margin-top:0">
+                <div class="card">
+                  <b style="font-size:12px; color: var(--bad);">Before Fix</b>
+                  <div style="margin-top:10px; padding: 16px; background: rgba(248,113,113,.1); border-radius: 10px; border: 1px dashed rgba(248,113,113,.3);">
+                    <div style="height: 8px; width: 60%; background: rgba(255,255,255,.1); border-radius: 4px; margin-bottom: 6px;"></div>
+                    <div style="height: 6px; width: 40%; background: rgba(255,255,255,.06); border-radius: 3px; margin-bottom: 6px;"></div>
+                    <div style="height: 6px; width: 20%; background: rgba(255,255,255,.04); border-radius: 3px;"></div>
+                    <p style="margin: 10px 0 0; font-size: 9px; color: var(--muted2);">Sparse content visible</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <b style="font-size:12px; color: var(--good);">After Fix</b>
+                  <div style="margin-top:10px; padding: 16px; background: rgba(74,222,128,.1); border-radius: 10px; border: 1px solid rgba(74,222,128,.3);">
+                    <div style="height: 8px; width: 90%; background: rgba(74,222,128,.4); border-radius: 4px; margin-bottom: 6px;"></div>
+                    <div style="height: 6px; width: 80%; background: rgba(74,222,128,.3); border-radius: 3px; margin-bottom: 6px;"></div>
+                    <div style="height: 6px; width: 70%; background: rgba(74,222,128,.25); border-radius: 3px; margin-bottom: 6px;"></div>
+                    <div style="height: 6px; width: 85%; background: rgba(74,222,128,.2); border-radius: 3px;"></div>
+                    <p style="margin: 10px 0 0; font-size: 9px; color: var(--muted2);">Full content indexed</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card tight">
+                <b style="font-size:12px">Result</b>
+                <p style="margin:6px 0 0; font-size:11px; color:var(--muted)">
+                  Once Google can reliably read pages, rankings become possible—then we scale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5: Split-Site Issue -->
+        <section class="slide" data-title="Split-Site Issue" data-sub="SEO power is diluted across hosts">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> Structural Issue</div>
+            <h2 class="stagger-2">Two sites = split SEO power</h2>
+            <p class="big stagger-3">
+              When content is on one host and the main product experience is on another,
+              Google can treat them as separate "properties".
+              That dilutes authority and slows growth.
+            </p>
+
+            <div class="pipeline stagger-4">
+              <div class="node">
+                <b>SEO Content Site</b>
+                <span>Blog/resources pages</span>
+              </div>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h12" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M13 6l6 6-6 6" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="node">
+                <b>Main Product Site</b>
+                <span>Booking + service pages</span>
+              </div>
+            </div>
+
+            <div class="card stagger-5" style="margin-top:12px">
+              <b style="font-size:12px">The fix</b>
+              <p style="margin:6px 0 0; font-size:11px; color:var(--muted)">
+                Consolidate SEO landing pages onto the main domain so authority, links, and relevance all stack in one place.
+              </p>
+            </div>
+
+            <div class="notes">
+              Analogy: "Like building two shops on separate streets and splitting your reviews between them."
+            </div>
+          </div>
+
+          <div class="visual stagger-6">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Target Architecture</b>
+                <span class="mini">Unified domain</span>
+              </div>
+
+              <div class="card">
+                <b style="font-size:12px">Consolidated Structure</b>
+                <p style="margin-top:8px; font-size:11px; color:var(--muted)">
+                  One domain for SEO landing pages + clear internal linking:
+                </p>
+                <div class="row" style="margin-top:10px">
+                  <span class="tag">Country hubs</span>
+                  <span class="tag">City hubs</span>
+                  <span class="tag">Service pages</span>
+                  <span class="tag">FAQs</span>
+                </div>
+              </div>
+
+              <div class="card tight" style="font-family: ui-monospace, monospace; background: rgba(0,0,0,.3);">
+                <span style="color: var(--muted2); font-size: 10px;">URL Structure</span>
+                <p style="margin: 6px 0 0; font-size: 12px; color: var(--cyan);">/en-us/drone-photography/nepal/kathmandu</p>
+              </div>
+
+              <div class="notes">
+                Stress: consolidation is not just a redirect; it's a structure + internal linking system.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 6: Money Keywords -->
+        <section class="slide" data-title="Money Keywords" data-sub="What we should rank for">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> Opportunity</div>
+            <h2 class="stagger-2">What you should be ranking for</h2>
+            <p class="big stagger-3">
+              We focus on searches with clear buying intent—people actively looking to hire.
+            </p>
+
+            <div class="card stagger-4" style="margin-top:12px">
+              <b style="font-size:12px">High-intent keyword themes for drone services</b>
+              <div class="grid2" style="margin-top:10px">
+                <div class="card tight" style="display: flex; gap: 10px; align-items: flex-start;">
+                  <div class="drone-service-icon real-estate"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                  <div>
+                    <b style="font-size:11px">Real Estate Aerial</b>
+                    <p style="margin-top:4px; font-size:10px; color:var(--muted); line-height: 1.4;">
+                      "drone photography for real estate"<br>
+                      "aerial property photos {city}"
+                    </p>
+                  </div>
+                </div>
+                <div class="card tight" style="display: flex; gap: 10px; align-items: flex-start;">
+                  <div class="drone-service-icon events"><svg class="icon-svg" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+                  <div>
+                    <b style="font-size:11px">Event Coverage</b>
+                    <p style="margin-top:4px; font-size:10px; color:var(--muted); line-height: 1.4;">
+                      "wedding drone videographer"<br>
+                      "event aerial footage {city}"
+                    </p>
+                  </div>
+                </div>
+                <div class="card tight" style="display: flex; gap: 10px; align-items: flex-start;">
+                  <div class="drone-service-icon survey"><svg class="icon-svg" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
+                  <div>
+                    <b style="font-size:11px">Surveys & Mapping</b>
+                    <p style="margin-top:4px; font-size:10px; color:var(--muted); line-height: 1.4;">
+                      "drone land survey"<br>
+                      "aerial mapping services"
+                    </p>
+                  </div>
+                </div>
+                <div class="card tight" style="display: flex; gap: 10px; align-items: flex-start;">
+                  <div class="drone-service-icon inspection"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                  <div>
+                    <b style="font-size:11px">Inspections</b>
+                    <p style="margin-top:4px; font-size:10px; color:var(--muted); line-height: 1.4;">
+                      "roof inspection drone"<br>
+                      "infrastructure drone survey"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="notes">
+              If client asks "what about informational keywords?" answer: we'll use content to support conversions, but main ROI comes from hire-intent.
+            </div>
+          </div>
+
+          <div class="visual stagger-5">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Keyword Prioritization</b>
+                <span class="mini">By value & intent</span>
+              </div>
+
+              <div class="card">
+                <div style="display:grid; grid-template-columns: 1.4fr .6fr .6fr; gap:8px; font-size:10px; color:var(--muted2); margin-bottom:10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,.06);">
+                  <b style="color:rgba(255,255,255,.7)">Keyword Theme</b>
+                  <b style="color:rgba(255,255,255,.7)">Intent</b>
+                  <b style="color:rgba(255,255,255,.7)">Value</b>
+                </div>
+
+                <div style="display:flex; flex-direction: column; gap: 8px; font-size:11px; color:var(--muted);">
+                  <div style="display:grid; grid-template-columns: 1.4fr .6fr .6fr; gap:8px; align-items: center;">
+                    <span>Drone pilot in {city}</span>
+                    <span class="tag" style="font-size:9px; padding: 4px 8px;">Hire now</span>
+                    <span style="color: var(--good); font-weight: 600;">High</span>
+                  </div>
+                  <div style="display:grid; grid-template-columns: 1.4fr .6fr .6fr; gap:8px; align-items: center;">
+                    <span>Real estate drone</span>
+                    <span class="tag" style="font-size:9px; padding: 4px 8px;">Hire soon</span>
+                    <span style="color: var(--good); font-weight: 600;">High</span>
+                  </div>
+                  <div style="display:grid; grid-template-columns: 1.4fr .6fr .6fr; gap:8px; align-items: center;">
+                    <span>Drone survey</span>
+                    <span class="tag" style="font-size:9px; padding: 4px 8px;">B2B</span>
+                    <span style="color: var(--accent); font-weight: 600;">Very High</span>
+                  </div>
+                  <div style="display:grid; grid-template-columns: 1.4fr .6fr .6fr; gap:8px; align-items: center;">
+                    <span>Event drone video</span>
+                    <span class="tag" style="font-size:9px; padding: 4px 8px;">Hire soon</span>
+                    <span style="color: var(--warn); font-weight: 600;">Medium</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <div class="metric-value accent">50+</div>
+                  <div class="metric-label">Target Cities</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value purple">8</div>
+                  <div class="metric-label">Service Types</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value good">400+</div>
+                  <div class="metric-label">Total Pages</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 7: Business Impact -->
+        <section class="slide" data-title="Business Impact" data-sub="Traffic → enquiries → bookings">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> ROI Logic</div>
+            <h2 class="stagger-2">How rankings turn into bookings</h2>
+            <p class="big stagger-3">
+              We don't sell "traffic". We build a pipeline that creates qualified enquiries and converts them to bookings.
+            </p>
+
+            <div class="pipeline stagger-4">
+              <div class="node">
+                <b>Visibility</b>
+                <span>Top results for buyer searches</span>
+              </div>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h12" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M13 6l6 6-6 6" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="node">
+                <b>Enquiries</b>
+                <span>People requesting info/quotes</span>
+              </div>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h12" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M13 6l6 6-6 6" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="node">
+                <b>Bookings</b>
+                <span>Confirmed, paid jobs</span>
+              </div>
+            </div>
+
+            <div class="card stagger-5" style="margin-top:12px">
+              <b style="font-size:12px">Discovery validates the math</b>
+              <p style="margin:6px 0 0; font-size:11px; color:var(--muted)">
+                In discovery we confirm conversion rates, average booking value, and capacity—so forecasts are realistic.
+              </p>
+            </div>
+
+            <div class="notes">
+              Bring Pete's "capacity" principle here: don't overwhelm operations or supply. We target priority markets the business can serve.
+            </div>
+          </div>
+
+          <div class="visual stagger-6">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Capacity Check</b>
+                <span class="mini">Sustainable growth</span>
+              </div>
+
+              <ul class="clean" style="margin-top:0">
+                <li><span class="bullet warn"></span><div><b>Can you fulfil more demand?</b><span>Pilots available + response time + confirmation speed.</span></div></li>
+                <li><span class="bullet warn"></span><div><b>Which cities are ready?</b><span>We scale where supply + margins are strongest.</span></div></li>
+                <li><span class="bullet warn"></span><div><b>What's the true booking value?</b><span>So ROI is measured on bookings, not clicks.</span></div></li>
+              </ul>
+
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <div class="metric-value good">3.2%</div>
+                  <div class="metric-label">Conv. Rate</div>
+                  <div class="metric-trend">↑ Target</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value accent">$450</div>
+                  <div class="metric-label">Avg Booking</div>
+                  <div class="metric-trend">↑ Target</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value purple">200+</div>
+                  <div class="metric-label">Monthly Cap</div>
+                  <div class="metric-trend">↑ Scalable</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 8: 4-Pillar Strategy -->
+        <section class="slide" data-title="4-Pillar Strategy" data-sub="Foundation → Scale → Consolidate → Authority">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> Strategy</div>
+            <h2 class="stagger-2">Our plan in 4 pillars</h2>
+
+            <div class="grid2 stagger-3" style="margin-top:12px">
+              <div class="card">
+                <b style="font-size:12px">1) Make pages readable</b>
+                <p style="margin-top:6px; font-size:11px; color:var(--muted)">
+                  Google must see full content instantly—otherwise rankings are capped.
+                </p>
+              </div>
+              <div class="card">
+                <b style="font-size:12px">2) Build scalable landing pages</b>
+                <p style="margin-top:6px; font-size:11px; color:var(--muted)">
+                  City + service templates with quality rules (no thin pages).
+                </p>
+              </div>
+              <div class="card">
+                <b style="font-size:12px">3) Consolidate onto one domain</b>
+                <p style="margin-top:6px; font-size:11px; color:var(--muted)">
+                  Combine SEO signals so authority compounds in one place.
+                </p>
+              </div>
+              <div class="card">
+                <b style="font-size:12px">4) Build authority with Digital PR</b>
+                <p style="margin-top:6px; font-size:11px; color:var(--muted)">
+                  Earn mentions/links from real publications and communities.
+                </p>
+              </div>
+            </div>
+
+            <div class="notes">
+              This is your "menu of value." It's not a vague checklist; each pillar has a measurable outcome.
+            </div>
+          </div>
+
+          <div class="visual stagger-4">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Execution Sequence</b>
+                <span class="mini">Order matters</span>
+              </div>
+
+              <div class="viz-container">
+                <div class="flow-diagram">
+                  <div class="flow-node">
+                    <div class="icon orange">1</div>
+                    <span>Readable</span>
+                  </div>
+                  <span class="flow-arrow">→</span>
+                  <div class="flow-node">
+                    <div class="icon purple">2</div>
+                    <span>Scale</span>
+                  </div>
+                  <span class="flow-arrow">→</span>
+                  <div class="flow-node">
+                    <div class="icon cyan">3</div>
+                    <span>Consolidate</span>
+                  </div>
+                  <span class="flow-arrow">→</span>
+                  <div class="flow-node">
+                    <div class="icon green">4</div>
+                    <span>Authority</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <b style="font-size:12px">Gate principle</b>
+                <p style="margin-top:6px; font-size:11px; color:var(--muted)">
+                  We don't scale pages until the foundation is fixed. Otherwise you publish hundreds of pages Google can't read.
+                </p>
+              </div>
+
+              <div class="card tight">
+                <b style="font-size:11px">Compounding effect</b>
+                <p style="margin:4px 0 0; font-size:10px; color:var(--muted)">
+                  Foundation + content + PR links → faster ranking movement and stable positions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 9: Phase 1 -->
+        <section class="slide" data-title="Phase 1 – Unblock" data-sub="Make Google able to read pages reliably">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> Phase 1</div>
+            <h2 class="stagger-2">Unblock: make Google able to read the site</h2>
+            <p class="big stagger-3">
+              Step one is ensuring your most important pages show full content instantly for search engines.
+            </p>
+
+            <ul class="clean stagger-4">
+              <li><span class="bullet good"></span><div><b>Instantly readable pages</b><span>Full text + links visible immediately for indexing.</span></div></li>
+              <li><span class="bullet good"></span><div><b>Clear "source of truth" signals</b><span>Avoid duplicates and confusion for Google.</span></div></li>
+              <li><span class="bullet good"></span><div><b>Speed basics</b><span>Fast enough that users (and Google) don't bounce.</span></div></li>
+            </ul>
+
+            <div class="notes">
+              If they ask "how?" keep it high-level: we implement server/pre-rendering for SEO landers; details are in the technical appendix.
+            </div>
+          </div>
+
+          <div class="visual stagger-5">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Success Criteria</b>
+                <span class="mini">Definition of done</span>
+              </div>
+
+              <div class="card">
+                <b style="font-size:12px">Acceptance checklist</b>
+                <ul style="margin:8px 0 0; padding-left:14px; color:var(--muted); font-size:11px; line-height:1.6">
+                  <li>Google can index the page reliably</li>
+                  <li>Page has clear title/description</li>
+                  <li>Internal links are present</li>
+                  <li>Core content is visible instantly</li>
+                </ul>
+              </div>
+
+              <div class="metrics-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="metric-card">
+                  <div class="metric-value good">98%</div>
+                  <div class="metric-label">Index Health</div>
+                  <div class="metric-trend">↑ Target</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value accent">&lt;2s</div>
+                  <div class="metric-label">Load Time</div>
+                  <div class="metric-trend">↑ Target</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 10: Phase 2 -->
+        <section class="slide" data-title="Phase 2 – Scale" data-sub="Programmatic city/service pages with quality gates">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> Phase 2</div>
+            <h2 class="stagger-2">Scale: build a repeatable landing page engine</h2>
+            <p class="big stagger-3">
+              Once the site is readable, we launch structured pages that target high-intent city and service searches.
+            </p>
+
+            <div class="grid2 stagger-4" style="margin-top:12px">
+              <div class="card">
+                <b style="font-size:12px">Page template</b>
+                <ul style="margin:6px 0 0; padding-left:14px; color:var(--muted); font-size:11px; line-height:1.5">
+                  <li>Clear service promise</li>
+                  <li>Local relevance (city details)</li>
+                  <li>Pricing expectations</li>
+                  <li>Process + trust</li>
+                  <li>FAQs</li>
+                </ul>
+              </div>
+              <div class="card">
+                <b style="font-size:12px">Quality gate</b>
+                <p style="margin-top:6px; font-size:11px; color:var(--muted)">
+                  We only publish pages that meet a minimum quality standard to avoid "thin page" penalties.
+                </p>
+                <div class="row" style="margin-top:8px">
+                  <span class="tag" style="font-size:9px;">Enough content</span>
+                  <span class="tag" style="font-size:9px;">Internal links</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="notes">
+              The template is your factory. The gate keeps quality high. This is how programmatic SEO works without becoming spam.
+            </div>
+          </div>
+
+          <div class="visual stagger-5">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Hub Structure</b>
+                <span class="mini">Content hierarchy</span>
+              </div>
+
+              <div class="pipeline" style="margin-top:0">
+                <div class="node">
+                  <b>Country Hub</b>
+                  <span>Top cities + services</span>
+                </div>
+                <svg class="arrow" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h12" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M13 6l6 6-6 6" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="node">
+                  <b>City Hub</b>
+                  <span>Services in that city</span>
+                </div>
+                <svg class="arrow" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h12" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M13 6l6 6-6 6" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="node">
+                  <b>Service Page</b>
+                  <span>Hire intent + CTA</span>
+                </div>
+              </div>
+
+              <div class="card tight">
+                <b style="font-size:11px">Priority Markets for <span id="clientNameMarkets">DazzDrones</span></b>
+                <div class="row" style="margin-top:8px" id="priorityCitiesContainer">
+                  <span class="tag" style="font-size:9px;">New York</span>
+                  <span class="tag" style="font-size:9px;">Los Angeles</span>
+                  <span class="tag" style="font-size:9px;">Chicago</span>
+                  <span class="tag" style="font-size:9px;">Houston</span>
+                  <span class="tag" style="font-size:9px;">Miami</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 11: Phase 3 -->
+        <section class="slide" data-title="Phase 3 – Authority" data-sub="Digital PR to earn trust + links">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> Phase 3</div>
+            <h2 class="stagger-2">Authority: Digital PR that compounds SEO</h2>
+            <p class="big stagger-3">
+              Great pages aren't enough in competitive markets. We build <b>reputation</b> so Google trusts the brand and rankings stick.
+            </p>
+
+            <div class="grid2 stagger-4" style="margin-top:12px">
+              <div class="card">
+                <b style="font-size:12px">What Digital PR means</b>
+                <ul style="margin:6px 0 0; padding-left:14px; color:var(--muted); font-size:11px; line-height:1.5">
+                  <li>Newsworthy stories (data + insights)</li>
+                  <li>Outreach to real publications</li>
+                  <li>Partnership mentions</li>
+                  <li>Earned links that lift authority</li>
+                </ul>
+              </div>
+              <div class="card">
+                <b style="font-size:12px">Why it matters</b>
+                <ul style="margin:6px 0 0; padding-left:14px; color:var(--muted); font-size:11px; line-height:1.5">
+                  <li>Faster ranking movement</li>
+                  <li>Harder to outrank you</li>
+                  <li>More trust for conversions</li>
+                  <li>Long-term compounding</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="notes">
+              Keep it clean: Digital PR = earned credibility at scale. It's the "trust" pillar that accelerates months 4–6.
+            </div>
+          </div>
+
+          <div class="visual stagger-5">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Campaign Ideas</b>
+                <span class="mini">PR opportunities</span>
+              </div>
+
+              <ul class="clean" style="margin-top:0">
+                <li><span class="bullet good"></span><div><b>"Drone Pricing Index by City"</b><span>Publish a quarterly report with insights.</span></div></li>
+                <li><span class="bullet good"></span><div><b>"Top Filming Locations Guide"</b><span>City-based content that earns links naturally.</span></div></li>
+                <li><span class="bullet good"></span><div><b>"Real Estate Aerial Trends 2026"</b><span>Partner with agencies + portals for mentions.</span></div></li>
+                <li><span class="bullet good"></span><div><b>Case studies</b><span>Before/after visuals from real projects.</span></div></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 12: Close -->
+        <section class="slide" data-title="Timeline + Next Steps" data-sub="Packages + frictionless kickoff">
+          <div>
+            <div class="kicker stagger-1"><span class="dot"></span> Let's Begin</div>
+            <h2 class="stagger-2">Timeline, packages & next steps</h2>
+
+            <div class="timeline stagger-3">
+              <div class="milestone">
+                <b>Month 1</b>
+                <ul>
+                  <li>Fix readability</li>
+                  <li>Launch first landers</li>
+                  <li>Baseline tracking</li>
+                </ul>
+              </div>
+              <div class="milestone">
+                <b>Month 2</b>
+                <ul>
+                  <li>Scale priority cities</li>
+                  <li>Hub structure live</li>
+                  <li>Quality gates</li>
+                </ul>
+              </div>
+              <div class="milestone">
+                <b>Month 3</b>
+                <ul>
+                  <li>Consolidate domains</li>
+                  <li>Stabilize indexation</li>
+                  <li>Start PR pushes</li>
+                </ul>
+              </div>
+              <div class="milestone">
+                <b>Months 4–6</b>
+                <ul>
+                  <li>Rankings compound</li>
+                  <li>Traffic lift</li>
+                  <li>PR accelerates</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pricing stagger-4">
+              <div class="plan">
+                <h3>Foundation</h3>
+                <div class="price" id="priceFoundation">$2,500 <small>/month</small></div>
+                <ul>
+                  <li>Indexability + on-site fixes</li>
+                  <li>First landing pages</li>
+                  <li>Reporting + QA gates</li>
+                </ul>
+              </div>
+
+              <div class="plan featured">
+                <div class="badge">Recommended</div>
+                <h3>Growth</h3>
+                <div class="price" id="priceGrowth">$4,500 <small>/month</small></div>
+                <ul>
+                  <li>Everything in Foundation</li>
+                  <li>Programmatic city/service scale</li>
+                  <li>Internal linking system</li>
+                </ul>
+              </div>
+
+              <div class="plan">
+                <h3>Scale</h3>
+                <div class="price" id="priceScale">$7,500 <small>/month</small></div>
+                <ul>
+                  <li>Everything in Growth</li>
+                  <li>Digital PR + authority building</li>
+                  <li>Campaigns + partnerships</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="notes">
+              If you charge for discovery: show a fixed-price "Discovery Sprint" and credit it toward month 1 if they proceed (optional).
+            </div>
+          </div>
+
+          <div class="visual stagger-5">
+            <div class="heroBox">
+              <div class="heroTitle">
+                <b>Let's Take Off</b>
+                <span class="mini" id="clientTaglineDisplay">Aerial Excellence</span>
+              </div>
+
+              <div class="roi-visual">
+                <div class="roi-item">
+                  <div class="roi-value" style="color: var(--cyan);"><svg class="icon-svg" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                  <div class="roi-label">Discovery</div>
+                </div>
+                <div class="roi-operator">→</div>
+                <div class="roi-item">
+                  <div class="roi-value" style="color: var(--purple);"><svg class="icon-svg" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+                  <div class="roi-label">Strategy</div>
+                </div>
+                <div class="roi-operator">→</div>
+                <div class="roi-item">
+                  <div class="roi-value" style="color: var(--accent);"><svg class="icon-svg" viewBox="0 0 24 24" stroke="currentColor"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+                  <div class="roi-label">Growth</div>
+                </div>
+                <div class="roi-operator">→</div>
+                <div class="roi-item">
+                  <div class="roi-value" style="color: var(--good);"><svg class="icon-svg" viewBox="0 0 24 24" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                  <div class="roi-label">Revenue</div>
+                </div>
+              </div>
+
+              <div class="contact-card acero-contact">
+                <img src="https://acero.digital/wp-content/uploads/2022/10/Logo-3-1.jpg" alt="ACERO Digital" class="contact-logo" id="contactLogoImg">
+                <div class="contact-info">
+                  <div class="contact-name" id="agencyNameDisplay">ACERO Digital</div>
+                  <div class="contact-detail" id="agencyEmailDisplay">info@acero.digital</div>
+                  <div class="contact-detail" id="agencyWebsiteDisplay">acero.digital</div>
+                </div>
+              </div>
+
+              <div class="viz-container" style="min-height: 70px;">
+                <div class="pulse-rings">
+                  <div class="pulse-ring"></div>
+                  <div class="pulse-ring"></div>
+                  <div class="pulse-ring"></div>
+                  <div class="pulse-center">
+                    <span>GO</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card tight" style="text-align: center;">
+                <b style="font-size:13px; color: var(--accent2);">Ready to dominate drone searches?</b>
+                <p style="margin:4px 0 0; font-size:11px; color:var(--muted)">
+                  <span id="clientNameCTA">DazzDrones</span> + SEO = Unstoppable Growth
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="deckFooter">
+        <div class="left"><span class="miniTag" id="slideTitleTag">SEO Growth Plan</span></div>
+        <div class="right">
+          <span class="miniTag" id="slideSubTag">90-day roadmap to rankings + bookings</span>
+          <span class="miniTag acero-tag">
+            <span style="opacity: 0.6;">Powered by</span>
+            <strong style="color: #FF6B00; margin-left: 4px;">ACERO</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progressWrap">
+    <div class="progress"><i id="progressBar"></i></div>
+    <div class="hint" id="hint">Press F for fullscreen</div>
+  </div>
+
+  <script>
+    (() => {
+      const slides = Array.from(document.querySelectorAll('section.slide'));
+      const counter = document.getElementById('counter');
+      const progressBar = document.getElementById('progressBar');
+      const btnPrev = document.getElementById('btnPrev');
+      const btnNext = document.getElementById('btnNext');
+      const btnNotes = document.getElementById('btnNotes');
+      const btnThumbs = document.getElementById('btnThumbs');
+      const btnAuto = document.getElementById('btnAuto');
+      const btnFS = document.getElementById('btnFS');
+      const thumbs = document.getElementById('thumbs');
+      const slideTitleTag = document.getElementById('slideTitleTag');
+      const slideSubTag = document.getElementById('slideSubTag');
+      const hint = document.getElementById('hint');
+
+      let idx = 0;
+      let auto = false;
+      let autoTimer = null;
+
+      function clamp(n, min, max){ return Math.max(min, Math.min(max, n)); }
+
+      function setSlide(n, {pushHash=true} = {}) {
+        idx = clamp(n, 0, slides.length - 1);
+        slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+        counter.textContent = `${idx + 1} / ${slides.length}`;
+        progressBar.style.width = `${((idx + 1) / slides.length) * 100}%`;
+
+        const t = slides[idx].dataset.title || `Slide ${idx+1}`;
+        const sub = slides[idx].dataset.sub || "";
+        slideTitleTag.textContent = t;
+        slideSubTag.textContent = sub;
+
+        updateThumbs();
+
+        if (pushHash) {
+          history.replaceState(null, "", `#${idx+1}`);
+        }
+      }
+
+      function next(){ setSlide(idx + 1); }
+      function prev(){ setSlide(idx - 1); }
+
+      function toggleNotes(){
+        document.body.classList.toggle('show-notes');
+        toast(document.body.classList.contains('show-notes') ? "Notes visible" : "Notes hidden");
+      }
+
+      function toggleThumbs(){
+        document.body.classList.toggle('show-thumbs');
+        toast(document.body.classList.contains('show-thumbs') ? "Slides panel open" : "Slides panel closed");
+      }
+
+      function toggleFullscreen(){
+        const el = document.documentElement;
+        if (!document.fullscreenElement) {
+          el.requestFullscreen?.();
+          toast("Fullscreen");
+        } else {
+          document.exitFullscreen?.();
+          toast("Exit fullscreen");
+        }
+      }
+
+      function toggleAutoplay(){
+        auto = !auto;
+        if (auto) {
+          btnAuto.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`;
+          toast("Autoplay on (8s)");
+          autoTimer = setInterval(() => {
+            if (idx < slides.length - 1) next();
+            else setSlide(0);
+          }, 8000);
+        } else {
+          btnAuto.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
+          toast("Autoplay off");
+          clearInterval(autoTimer);
+          autoTimer = null;
+        }
+      }
+
+      function buildThumbs(){
+        thumbs.innerHTML = "";
+        slides.forEach((s, i) => {
+          const d = document.createElement('div');
+          d.className = 'thumb';
+          const title = s.dataset.title || `Slide ${i+1}`;
+          const sub = s.dataset.sub || "";
+          d.innerHTML = `<b>${i+1}. ${escapeHtml(title)}</b><span>${escapeHtml(sub)}</span>`;
+          d.addEventListener('click', () => setSlide(i));
+          thumbs.appendChild(d);
+        });
+      }
+
+      function updateThumbs(){
+        const items = Array.from(thumbs.querySelectorAll('.thumb'));
+        items.forEach((t, i) => t.classList.toggle('active', i === idx));
+      }
+
+      function escapeHtml(str){
+        return String(str).replace(/[&<>"']/g, m => ({
+          '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+        }[m]));
+      }
+
+      let toastTimer = null;
+      function toast(msg){
+        hint.textContent = msg;
+        hint.style.opacity = "1";
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          hint.textContent = "← → to navigate";
+        }, 2000);
+      }
+
+      // Events
+      btnPrev.addEventListener('click', prev);
+      btnNext.addEventListener('click', next);
+      btnNotes.addEventListener('click', toggleNotes);
+      btnThumbs.addEventListener('click', toggleThumbs);
+      btnAuto.addEventListener('click', toggleAutoplay);
+      btnFS.addEventListener('click', toggleFullscreen);
+
+      window.addEventListener('keydown', (e) => {
+        const k = e.key.toLowerCase();
+        if (k === 'arrowright' || k === ' ' || k === 'pagedown') { e.preventDefault(); next(); }
+        if (k === 'arrowleft' || k === 'pageup') { e.preventDefault(); prev(); }
+        if (k === 'home') { e.preventDefault(); setSlide(0); }
+        if (k === 'end') { e.preventDefault(); setSlide(slides.length - 1); }
+        if (k === 'f') { e.preventDefault(); toggleFullscreen(); }
+        if (k === 'n') { e.preventDefault(); toggleNotes(); }
+        if (k === 't') { e.preventDefault(); toggleThumbs(); }
+        if (k === 'a') { e.preventDefault(); toggleAutoplay(); }
+        if (k === 'p') {
+          e.preventDefault();
+          document.body.classList.add('show-notes','show-thumbs');
+          toast("Presenter mode");
+        }
+      }, {passive:false});
+
+      // Touch swipe
+      let x0 = null;
+      window.addEventListener('touchstart', (e) => {
+        if (e.touches?.length === 1) x0 = e.touches[0].clientX;
+      }, {passive:true});
+      window.addEventListener('touchend', (e) => {
+        if (x0 == null) return;
+        const x1 = e.changedTouches?.[0]?.clientX ?? x0;
+        const dx = x1 - x0;
+        if (Math.abs(dx) > 60) dx < 0 ? next() : prev();
+        x0 = null;
+      }, {passive:true});
+
+      function initFromHash(){
+        const m = location.hash.match(/#(\d+)/);
+        if (m) setSlide(parseInt(m[1],10)-1, {pushHash:false});
+        else setSlide(0, {pushHash:false});
+      }
+
+      buildThumbs();
+      initFromHash();
+      window.addEventListener('hashchange', initFromHash);
+
+      setTimeout(() => toast("Press F for fullscreen"), 800);
+
+      // ============================================
+      // APPLY CLIENT PERSONALIZATION
+      // ============================================
+      function applyClientConfig() {
+        const cfg = window.CLIENT_CONFIG;
+        if (!cfg) return;
+
+        // Client name in various places
+        const clientNameElements = [
+          'clientNameBadge',
+          'clientNameCTA',
+          'clientNameMarkets',
+          'brandClientName'
+        ];
+        clientNameElements.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = cfg.clientName;
+        });
+
+        // Agency info
+        if (document.getElementById('agencyNameDisplay')) {
+          document.getElementById('agencyNameDisplay').textContent = cfg.agencyName;
+        }
+        if (document.getElementById('agencyEmailDisplay')) {
+          document.getElementById('agencyEmailDisplay').textContent = cfg.agencyEmail;
+        }
+        if (document.getElementById('agencyWebsiteDisplay') && cfg.agencyWebsite) {
+          document.getElementById('agencyWebsiteDisplay').textContent = cfg.agencyWebsite;
+        }
+
+        // Agency logo
+        if (cfg.agencyLogo) {
+          if (document.getElementById('agencyLogoImg')) {
+            document.getElementById('agencyLogoImg').src = cfg.agencyLogo;
+          }
+          if (document.getElementById('contactLogoImg')) {
+            document.getElementById('contactLogoImg').src = cfg.agencyLogo;
+          }
+        }
+
+        // Client tagline
+        if (document.getElementById('clientTaglineDisplay')) {
+          document.getElementById('clientTaglineDisplay').textContent = cfg.clientTagline;
+        }
+
+        // Priority cities
+        if (cfg.priorityCities && document.getElementById('priorityCitiesContainer')) {
+          const container = document.getElementById('priorityCitiesContainer');
+          container.innerHTML = cfg.priorityCities.map(city =>
+            `<span class="tag" style="font-size:9px;">${city}</span>`
+          ).join('');
+        }
+
+        // Services grid with SVG icons
+        if (cfg.services && document.getElementById('serviceGrid')) {
+          const iconMap = {
+            home: '<svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+            video: '<svg class="icon-svg" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>',
+            ruler: '<svg class="icon-svg" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>',
+            search: '<svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+            building: '<svg class="icon-svg" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><line x1="8" y1="6" x2="8" y2="6"/><line x1="12" y1="6" x2="12" y2="6"/><line x1="16" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/></svg>',
+            camera: '<svg class="icon-svg" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>',
+            map: '<svg class="icon-svg" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>',
+            settings: '<svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>'
+          };
+          const grid = document.getElementById('serviceGrid');
+          grid.innerHTML = cfg.services.map(service => {
+            const icon = iconMap[service.icon] || iconMap.camera;
+            return `<div class="service-card">
+              <div class="service-icon">${icon}</div>
+              <div class="service-name">${service.name}</div>
+            </div>`;
+          }).join('');
+        }
+
+        // Pricing
+        if (cfg.pricing) {
+          if (document.getElementById('priceFoundation')) {
+            document.getElementById('priceFoundation').innerHTML = `${cfg.pricing.foundation} <small>/month</small>`;
+          }
+          if (document.getElementById('priceGrowth')) {
+            document.getElementById('priceGrowth').innerHTML = `${cfg.pricing.growth} <small>/month</small>`;
+          }
+          if (document.getElementById('priceScale')) {
+            document.getElementById('priceScale').innerHTML = `${cfg.pricing.scale} <small>/month</small>`;
+          }
+        }
+
+        // Metrics
+        if (cfg.metrics) {
+          if (document.getElementById('statCities')) {
+            document.getElementById('statCities').textContent = cfg.metrics.targetCities;
+          }
+        }
+
+        // Update page title
+        document.title = `SEO Growth Plan – ${cfg.clientName}`;
+      }
+
+      // Apply config on load
+      applyClientConfig();
+    })();
+  </script>
+
+  <!-- ============================================
+       HOW TO PERSONALIZE FOR EACH CLIENT:
+       ============================================
+       1. Edit the CLIENT_CONFIG object at the top of this file
+       2. Change clientName, agencyName, services, pricing, etc.
+       3. Refresh the page - all personalized elements update automatically!
+
+       The following elements are personalized:
+       - Client name badge on slide 1
+       - Services grid with custom icons
+       - Priority cities list
+       - Pricing for all tiers
+       - Contact information
+       - Page title
+
+       For deeper customization:
+       - Add/remove slides as needed
+       - Adjust colors in the :root CSS variables
+       - Replace the drone animation with client's logo
+       ============================================ -->
+</body>
+</html>
